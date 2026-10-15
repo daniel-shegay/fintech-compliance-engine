@@ -1,0 +1,23 @@
+[
+  {
+    "id": "demo-admin-1",
+    "username": "admin",
+    "password": "$2a$10$0HvC0F6uBEG70BiFplwSFeNKaP.xbLNXa3ZK11gD4rLpwv96xMEOe",
+    "createdAt": "2026-01-01T00:00:00.000Z",
+    "role": "admin"
+  },
+  {
+    "id": "demo-operator-2",
+    "username": "operator",
+    "password": "$2a$10$.XZMPpTtn5R90nBSMRq2i.aQ7wT1Gg9aATYPj8iySR.TYV96CEida",
+    "createdAt": "2026-01-01T00:00:00.000Z",
+    "role": "cc"
+  },
+  {
+    "id": "demo-viewer-3",
+    "username": "viewer",
+    "password": "$2a$10$6gaSSL7u4z.21P/AfhEy0uZMw1TBjIEzhV6aDdRVZA59xRXo8Ao9e",
+    "createdAt": "2026-01-01T00:00:00.000Z",
+    "role": "mail"
+  }
+]

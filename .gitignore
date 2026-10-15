@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+package-lock.json.log
+
+# Environment variables & credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+google-service-account*.json
+
+# Runtime & Audit Logs
+*.log
+audit/*.jsonl
+!audit/.gitkeep
+
+# OS & Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

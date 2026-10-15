@@ -1,0 +1,24 @@
+{
+  "name": "@fintech/writeoff",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Debt write-off waterfall engine: balance reading, hierarchical liquidation, guards, audit",
+  "main": "src/index.js",
+  "bin": {
+    "writeoff-cli": "bin/cli.js"
+  },
+  "engines": {
+    "node": ">=18.17"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.js\"",
+    "rehearsal": "node tools/rehearsal.js",
+    "lint": "node --check src/index.js && node --check bin/cli.js"
+  },
+  "dependencies": {},
+  "files": [
+    "src",
+    "bin",
+    "README.md"
+  ]
+}

@@ -1,0 +1,13 @@
+node_modules
+npm-debug.log
+.env
+.env.*
+users.json
+.git
+.gitignore
+README.md
+# Аудит-лог приходит томом с хоста, в образе ему делать нечего.
+audit
+# Google service-account klic pro pipeline (Sheets, krok 2) — prichazi jako
+# read-only bind-mount v docker-compose.yml, do obrazu se nekopiruje.
+google-service-account.json

@@ -1,0 +1,24 @@
+services:
+  compliance:
+    build: .
+    container_name: fintech-compliance
+    restart: unless-stopped
+    env_file:
+      - .env
+    # Headless Chromium (Playwright, krok 7-8 pipeline) casto pada na
+    # vychozim malem /dev/shm v Dockeru — bez tohoto by hlaseni bylo matouci
+    # ("Target crashed") a nemelo by nic spolecneho se skutecnou chybou.
+    shm_size: '1gb'
+    volumes:
+      - ./users.json:/app/users.json
+      # Audit odpisu. Drzi idempotenci a zaznamy o neuzavrenych provedenich,
+      # proto musi prezit pre-build obrazu. Bind-mount, ne pojmenovany svazek,
+      # zamerne: tento log potrebujeme umet cist a zalohovat z hostu.
+      - ./audit:/app/audit
+      # Google service-account klic pro zapis do Google Sheets (krok 2
+      # pipeline). Soubor na hostu, cesta uvnitr kontejneru odpovida
+      # GOOGLE_APPLICATION_CREDENTIALS v .env. Read-only — kontejner klic
+      # jen cte.
+      - ./google-service-account.json:/app/google-service-account.json:ro
+    ports:
+      - "127.0.0.1:3001:3000"
